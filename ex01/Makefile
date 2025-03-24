@@ -4,6 +4,7 @@ CFLAGS := -std=c++98 -Wall -Wextra -Werror
 SRCDIR := .
 SRCS += $(SRCDIR)/main.cpp
 SRCS += $(SRCDIR)/ClapTrap.cpp
+SRCS += $(SRCDIR)/ScavTrap.cpp
 
 OBJDIR := objs
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)

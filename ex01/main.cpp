@@ -1,13 +1,13 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap claptrap("Alex");
-	claptrap.attack("target");
-	claptrap.takeDamage(5);
-	claptrap.beRepaired(5);
-	claptrap.takeDamage(5);
-	claptrap.takeDamage(5);
-	claptrap.beRepaired(5);
+	ScavTrap scavtrap("Alex");
+	scavtrap.attack("target");
+	scavtrap.guardGate();
+	scavtrap.takeDamage(5);
+	scavtrap.beRepaired(5);
+	scavtrap.takeDamage(100);
+	scavtrap.attack("target");
 	return 0;
 }
