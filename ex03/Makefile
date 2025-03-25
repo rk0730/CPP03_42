@@ -6,6 +6,7 @@ SRCS += $(SRCDIR)/main.cpp
 SRCS += $(SRCDIR)/ClapTrap.cpp
 SRCS += $(SRCDIR)/ScavTrap.cpp
 SRCS += $(SRCDIR)/FragTrap.cpp
+SRCS += $(SRCDIR)/DiamondTrap.cpp
 
 OBJDIR := objs
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
