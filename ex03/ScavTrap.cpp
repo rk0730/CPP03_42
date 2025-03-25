@@ -8,6 +8,21 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	attack_damage = 20;
 }
 
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) 
+{
+	std::cout << "ScavTrap " << name << "(copy) is born!" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
+{
+	if (this != &other)
+	{
+		ClapTrap::operator=(other);
+		std::cout << "ScavTrap " << name << "(copy assign) is born!" << std::endl;
+	}
+	return *this;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap " << name << " is dead!" << std::endl;
