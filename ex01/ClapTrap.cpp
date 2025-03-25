@@ -1,5 +1,13 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() : name("default")
+{
+	std::cout << "ClapTrap " << name << " is born!" << std::endl;
+	hit_points = 10;
+	energy_points = 10;
+	attack_damage = 0;
+}
+
 ClapTrap::ClapTrap(std::string name) : name(name)
 {
 	std::cout << "ClapTrap " << name << " is born!" << std::endl;

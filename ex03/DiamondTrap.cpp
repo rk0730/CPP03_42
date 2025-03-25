@@ -1,5 +1,13 @@
 #include "DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), ScavTrap("default"), FragTrap("default"), name("default")
+{
+	std::cout << "DiamondTrap " << name << " is born!" << std::endl;
+	hit_points = FragTrap::hit_points;
+	energy_points = ScavTrap::energy_points;
+	attack_damage = FragTrap::attack_damage;
+}
+
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), name(name)
 {
 	std::cout << "DiamondTrap " << name << " is born!" << std::endl;

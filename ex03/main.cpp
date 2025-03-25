@@ -14,7 +14,7 @@ int main(void)
 	
 	DiamondTrap diamondtrap2(diamondtrap);
 	diamondtrap2.whoAmI();
-	DiamondTrap diamondtrap3("Bob");
+	DiamondTrap diamondtrap3;
 	diamondtrap3 = diamondtrap2;
 	diamondtrap3.whoAmI();
 	return 0;

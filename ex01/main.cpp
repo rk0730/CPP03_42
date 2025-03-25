@@ -12,7 +12,7 @@ int main(void)
 	
 	ScavTrap scavtrap2(scavtrap);
 	scavtrap2.attack("target");
-	ScavTrap scavtrap3("Bob");
+	ScavTrap scavtrap3;
 	scavtrap3 = scavtrap2;
 	return 0;
 }

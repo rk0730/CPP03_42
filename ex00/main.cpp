@@ -11,7 +11,7 @@ int main(void)
 	claptrap.beRepaired(5);
 	
 	ClapTrap claptrap2 = claptrap;
-	ClapTrap claptrap3("Bob");
+	ClapTrap claptrap3;
 	claptrap3 = claptrap2;
 	return 0;
 }
