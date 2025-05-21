@@ -16,10 +16,10 @@ public:
 	void beRepaired(unsigned int amount);
 
 protected:
-	std::string name;
-	unsigned int hit_points;
-	unsigned int energy_points;
-	unsigned int attack_damage;
+	std::string _name;
+	unsigned int _hit_points;
+	unsigned int _energy_points;
+	unsigned int _attack_damage;
 };
 
 #endif
