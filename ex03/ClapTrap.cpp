@@ -16,17 +16,22 @@ ClapTrap::ClapTrap(std::string _name) : _name(_name)
 	_attack_damage = 0;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &other) : _name(other._name), _hit_points(other._hit_points), _energy_points(other._energy_points), _attack_damage(other._attack_damage)
+ClapTrap::ClapTrap(const ClapTrap &other)
+	: _name(other._name), _hit_points(other._hit_points), _energy_points(other._energy_points),
+	  _attack_damage(other._attack_damage)
 {
 	std::cout << "ClapTrap " << _name << "(copy) is born!" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-	_name = other._name;
-	_hit_points = other._hit_points;
-	_energy_points = other._energy_points;
-	_attack_damage = other._attack_damage;
+	if (this != &other)
+	{
+		_name = other._name;
+		_hit_points = other._hit_points;
+		_energy_points = other._energy_points;
+		_attack_damage = other._attack_damage;
+	}
 	std::cout << "ClapTrap " << _name << "(copy assign) is born!" << std::endl;
 	return *this;
 }
@@ -38,17 +43,18 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string &target)
 {
-	if (_hit_points == 0)
+	if (_hit_points <= 0)
 	{
 		std::cout << "ClapTrap " << _name << " has no hit points!" << std::endl;
 		return;
 	}
-	if (_energy_points == 0)
+	if (_energy_points <= 0)
 	{
 		std::cout << "ClapTrap " << _name << " has no energy points!" << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attack_damage
+			  << " points of damage!" << std::endl;
 	_energy_points -= 1;
 }
 
@@ -63,12 +69,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_hit_points == 0)
+	if (_hit_points <= 0)
 	{
 		std::cout << "ClapTrap " << _name << " has no hit points!" << std::endl;
 		return;
 	}
-	if (_energy_points == 0)
+	if (_energy_points <= 0)
 	{
 		std::cout << "ClapTrap " << _name << " has no energy points!" << std::endl;
 		return;
